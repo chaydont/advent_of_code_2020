@@ -34,7 +34,7 @@ def lineIsValidPart2(line):
     pos1 = int(positions[0]) - 1
     pos2 = int(positions[1]) - 1
     letter = letter[0]
-    return (password[pos1] == letter) and (password[pos2] != letter) or (password[pos1] != letter) and (password[pos2] == letter)
+    return (password[pos1] == letter) ^ (password[pos2] == letter)
 
 print("Part 1 : %d" % part1())
 print("Part 2 : %d" % part2())
