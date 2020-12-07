@@ -1,4 +1,5 @@
 import re
+from functools import lru_cache
 
 rules = {}
 
@@ -24,7 +25,7 @@ with open('input.txt') as stream:
     for line in stream:
         parseLine(line)
 
-
+@lru_cache(maxsize=None)
 def canContainGoldy(currentColor):
     for color in rules[currentColor]:
         if color['color'] == 'shiny gold' or canContainGoldy(color['color']):
