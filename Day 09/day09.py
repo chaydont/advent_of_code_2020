@@ -1,5 +1,3 @@
-from queue import Queue
-
 PREAMBLE_LENGTH = 25
 with open('input.txt') as stream:
     lines = [int(a) for a in stream]
