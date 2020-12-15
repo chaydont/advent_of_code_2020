@@ -9,13 +9,7 @@ def algo(n):
     while index < n - 1:
         if index % (n // 100) == 0:
             print("\r%d %%" % (100 * index / n), end = '')
-        current = last
-        if current in memory.keys():
-            current = index - memory[current]
-        else:
-            current = 0
-        memory[last] = index
-        last = current
+        memory[last], last = index, index - memory[last] if last in memory.keys() else 0
         index += 1
     return last
 
